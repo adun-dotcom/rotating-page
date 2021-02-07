@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65%;
+}
+
+body {
+  background: rgb(15, 14, 14);
+  font-size: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: aliceblue;
+  width: 100vw;
+  min-height: 100vh;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  padding: 50px;
+}
+
+.container.rotate {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: rgb(149, 216, 199);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.container.rotate .circle {
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  position: absolute;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  border: 0;
+  font-size: 2rem;
+  background: transparent;
+  color: #fff;
+}
+
+.circle button:focus {
+  outline: none;
+}
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content img {
+  max-width: 100%;
+  padding-top: 3rem;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content p {
+  line-height: 1.5;
+  color: rgb(83, 83, 83);
+  padding: 3rem 0;
+}
+
+.content small {
+  font-style: italic;
+}
+
+.container.rotate + .nav-items li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.nav-items {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  z-index: 100;
+}
+
+.nav-items ul {
+  padding-left: 10px;
+  list-style: none;
+}
+.nav-items ul li {
+  text-transform: uppercase;
+  line-height: 2;
+  color: #fff;
+  font-size: 2rem;
+  margin: 30px 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in;
+}
+
+.nav-items ul li i {
+  margin-right: 1rem;
+}
+
+.nav-items ul li + li {
+  margin-left: 2rem;
+  transform: translateX(-150%);
+}
+
+.nav-items ul li + li + li {
+  margin-left: 4rem;
+  transform: translateX(-200%);
+}
